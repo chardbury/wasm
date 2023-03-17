@@ -103,7 +103,7 @@ async fn main() {
         draw_rectangle(screen_offset_x, screen_offset_y, screen_world_width, screen_world_height, LIGHTGRAY);
 
         let screen_player_x = player_x * screen_scale + screen_offset_x;
-        let screen_player_y = screen_height() - player_y * screen_scale + screen_offset_y;
+        let screen_player_y = screen_height() - (player_y * screen_scale + screen_offset_y);
         let screen_player_radius = PLAYER_RADIUS * screen_scale;
         draw_circle(screen_player_x, screen_player_y, screen_player_radius, RED);
 
