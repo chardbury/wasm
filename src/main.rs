@@ -30,7 +30,10 @@ async fn main() {
 
     loop {
 
-        if is_key_pressed(KeyCode::Escape) { break; }
+        #[cfg(not(target_arch = "wasm32"))]
+        if is_key_pressed(KeyCode::Escape) {
+            break;
+        }
 
         let mut player_dx = (player_x - old_player_x) * MOVE_DECAY_FACTOR;
         let mut player_dy = (player_y - old_player_y) * MOVE_DECAY_FACTOR;
